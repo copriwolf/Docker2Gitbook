@@ -1,0 +1,30 @@
+FROM centos
+MAINTAINER Copriwolf <root@or2.in>
+
+# 安装环境必须软件
+RUN yum -y install epel-release 
+
+
+RUN yum -y install nodejs npm 
+RUN yum -y install gcc gcc-c++ automake autoconf libtool make  
+    
+# 安装gitbook
+RUN npm config set registry=http://registry.npm.taobao.org && \
+    npm install gitbook-cli -g && \
+    gitbook -V
+
+RUN mkdir -p /gitbook/docs
+
+WORKDIR /gitbook
+ADD ./book.json .
+ VOLUME /src/ /gitbook/docs
+
+RUN gitbook init $PWD/docs
+RUN npm install -g node-gyp
+# RUN npm install -g nodejieba && \
+#    npm install gitbook-plugin-search-jieba
+RUN gitbook install
+EXPOSE 4000 
+CMD ["gitbook","serve"]
+
+

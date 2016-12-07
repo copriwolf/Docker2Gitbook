@@ -1,0 +1,34 @@
+{
+    "title": "GitBookDemo",
+    "root": "./docs",
+    "generator": "site",
+    "author": "copriwolf",
+    "description": "Gitbook Demo",
+    "language": "zh-hans",
+    "links": {
+        "sidebar" : {
+            "Home" : "http://or2.in"
+        }
+    },
+    "plugins": [
+        "-lunr",
+        "search-jieba",
+        "sitemap-general",
+        "advanced-emoji",
+        "tbfed-pagefooter"
+    ],
+    "pluginsConfig": {
+        "search-pro": {
+            "cutWordLib": "nodejieba",
+            "defineWord": ["GitBookDemo"]
+        },
+        "tbfed-pagefooter": {
+            "copyright": "Copyright &copy or2.in 2016",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "sitemap-general": {
+            "prefix":"http://n0de.cn:4000"
+        }
+    }
+}
