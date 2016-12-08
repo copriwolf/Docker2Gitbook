@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Docker2gitbook by copriwolf</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Docker2gitbook</h1>
+      <h2 class="project-tagline">To quickly build service automatically | 快速构建gitbook服务容器，让你专注于创作本身</h2>
+      <a href="https://github.com/copriwolf/Docker2Gitbook" class="btn">View on GitHub</a>
+      <a href="https://github.com/copriwolf/Docker2Gitbook/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/copriwolf/Docker2Gitbook/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="docker2gitbook" class="anchor" href="#docker2gitbook" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Docker2Gitbook</h1>
+
+<p><a href="#%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E">中文帮助?</a></p>
+
+<h2>
+<a id="intro" class="anchor" href="#intro" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Intro</h2>
+
+<p>Quickly set up the Gitbook Serve online &amp; focus on creating knowledge.</p>
+
+<blockquote>
+<p>The purpose of this project is to simplify the construction and online of Gitbook .
+So you need to know some basic knowledge about Gitbook data structure . (Like knowing the function of SUMMARY.md)</p>
+</blockquote>
+
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h2>
+
+<ul>
+<li>You should have installed the <code>docker</code>.</li>
+<li>Clone the project from the Github.</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>git clone git@github.com:copriwolf/Docker2Gitbook.git</pre></div>
+
+<ul>
+<li>Run the following command to make up a folder named <code>docs</code>.</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span> Docker2Gitbook
+mkdir docs</pre></div>
+
+<ul>
+<li>Put your documents to the docs(e.g: README.md,SUMMARY.md)</li>
+<li>Run the following command, And wait for the process done.</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>docker build <span class="pl-c1">.</span> -t <span class="pl-s"><span class="pl-pds">'</span>docker2gitbook<span class="pl-pds">'</span></span></pre></div>
+
+<ul>
+<li>Run the following command, And you can find the Gitbook Server is online.</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>docker run -d -p 4000:4000 docker2gitbook</pre></div>
+
+<h2>
+<a id="project-flow" class="anchor" href="#project-flow" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project Flow</h2>
+
+<ul>
+<li>Put the <code>Document Data</code> to the folder.</li>
+<li>Build the docker images with <code>Dockerfile</code> from the Github.</li>
+<li>Run the Gitbook Server </li>
+</ul>
+
+<p><img src="https://github.com/copriwolf/Docker2Gitbook/raw/master/help/flow.png" alt=""></p>
+
+<hr>
+
+<h1>
+<a id="中文说明" class="anchor" href="#%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>中文说明</h1>
+
+<h2>
+<a id="简介" class="anchor" href="#%E7%AE%80%E4%BB%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>简介</h2>
+
+<p>快速构建gitbook服务容器，让你专注于创作本身。</p>
+
+<blockquote>
+<p>本项目的意图在于把gitbook的构建与上线流程精简化，让用户专注与创作本身，所以你需要先了解Gitbook的数据结构基本知识（使用SUMMARY.md来规范层级关系等）。</p>
+</blockquote>
+
+<h2>
+<a id="使用方法" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用方法</h2>
+
+<ul>
+<li>使用本项目前要确保已经安装了<code>docker</code>.</li>
+<li>把本项目克隆到本地上</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>git clone git@github.com:copriwolf/Docker2Gitbook.git</pre></div>
+
+<ul>
+<li>进入项目文件夹，并创建一个<code>docs</code>子文件夹用于存放文章数据。</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span> Docker2Gitbook
+mkdir docs</pre></div>
+
+<ul>
+<li>把你的文章数据(如README.md,SUMMARY.md)放到子目录<code>docs</code>中</li>
+<li>运行以下命令构建你的Gitbook容器(<code>build</code>),并等待构建完成。</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>docker build <span class="pl-c1">.</span> -t <span class="pl-s"><span class="pl-pds">'</span>docker2gitbook<span class="pl-pds">'</span></span></pre></div>
+
+<ul>
+<li>运行以下命令把Gitbook网站开放到本地的4000端口,并后台自动运行服务器</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>docker run -d -p 4000:4000 docker2gitbook</pre></div>
+
+<h2>
+<a id="项目流程" class="anchor" href="#%E9%A1%B9%E7%9B%AE%E6%B5%81%E7%A8%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>项目流程</h2>
+
+<ul>
+<li>把<code>文章数据</code>放置在子文件夹。</li>
+<li>通过本项目的<code>DockerFile</code>文件构建了一个docker镜像</li>
+<li>通过运行Docker服务来运行Gitbook服务。</li>
+</ul>
+
+<p><img src="https://github.com/copriwolf/Docker2Gitbook/raw/master/help/flow.png" alt=""></p>
+
+<h2>
+<a id="注意事项" class="anchor" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>注意事项</h2>
+
+<ul>
+<li>如何查看当前服务器是否在运行中？
+在本地运行以下命令，查看是否有回传结果，有即说明服务器在运行中。</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>docker ps <span class="pl-k">|</span> grep docker2gitbook</pre></div>
+
+<ul>
+<li>我不想开放4000端口，我想开放5500端口可以吗？
+可以的，docker提供了端口映射功能，我的脚本默认把容器内的4000端口映射到本地的4000端口，如果你需要，可以改为其他的，你可以修改<code>使用方法的第6步</code>
+</li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>docker run -d -p 5500:4000 docker2gitbook</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/copriwolf/Docker2Gitbook">Docker2gitbook</a> is maintained by <a href="https://github.com/copriwolf">copriwolf</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
