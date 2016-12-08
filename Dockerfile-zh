@@ -1,0 +1,24 @@
+FROM node
+MAINTAINER Copriwolf <root@or2.in>
+
+RUN mkdir -p /gitbook/docs
+WORKDIR /gitbook
+
+# 针对国内版本可以提高加载速度
+RUN npm config set registry=http://registry.npm.taobao.org
+
+RUN npm install -g gitbook-cli && gitbook -V
+
+COPY ./book.json /gitbook/
+
+# 针对内存1g及其以下，直接gitbook install会导致内存不足
+RUN npm install nodejieba
+RUN npm install gitbook-plugin-search-jieba
+
+RUN gitbook install
+COPY ./docs/ /gitbook/docs/
+
+EXPOSE 4000 
+CMD ["gitbook","serve"]
+
+
