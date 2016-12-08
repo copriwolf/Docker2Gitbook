@@ -32,7 +32,7 @@ docker run -d -p 4000:4000 docker2gitbook
 - Build the docker images with `Dockerfile` from the Github.
 - Run the Gitbook Server 
 
-![](help/flow.png)
+![](https://github.com/copriwolf/Docker2Gitbook/raw/master/help/flow.png)
 
 ---
 
@@ -68,7 +68,7 @@ docker run -d -p 4000:4000 docker2gitbook
 - 通过本项目的`DockerFile`文件构建了一个docker镜像
 - 通过运行Docker服务来运行Gitbook服务。
 
-![](help/flow.png)
+![](https://github.com/copriwolf/Docker2Gitbook/raw/master/help/flow.png)
 
 ## 注意事项
 - 如何查看当前服务器是否在运行中？
