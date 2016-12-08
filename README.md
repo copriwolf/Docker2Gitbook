@@ -3,10 +3,12 @@
 ## Intro
 You can quickly set up the Gitbook Serve online.
 
-![](help/flow.png)
+## Project Flow 
 1. Put the `Document Data` to the folder.
 2. Build the docker images with `Dockerfile` from the Github.
 3. Run the Gitbook Server 
+
+![](help/flow.png)
 
 ## How to use
 1. You should have installed the `docker`.
