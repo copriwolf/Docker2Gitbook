@@ -83,7 +83,17 @@ docker ps | grep docker2gitbook
 docker run -d -p 5500:4000 docker2gitbook
 ```
 
+- 在国内加载npm源的速度太慢了，有没有办法加速？
+使用国内的淘宝镜像npm源来替代，能有显著的速度提升，请在执行`使用方法`前在，本地的项目`根目录`运行以下命令。
+```
+mv dockerfile-zh dockerfile
+```
 
+- 主机的内存配置不够，在gitbook install这一步等待时间长，最后显示`KILLED`，然后安装失败，如何解决？
+分布安装gitbook插件可以解决这个情况。请在执行`使用方法`前在，本地的项目`根目录`运行以下命令。
+```
+mv dockerfile-zh dockerfile
+```
 
 
 
